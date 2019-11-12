@@ -1,0 +1,60 @@
+.exchange-container {
+	font-family: helvetica;
+	height: 70vh;
+	background: #2C6CEC;
+	background-image:url('../images/background.png');
+	background-attachment:fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	.header {
+		height: 40px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	
+	.header a {
+		display: inline-block;
+		width: 100px;
+		height: 40px;
+		color: #FFF;
+		font-size: 16px;
+		cursor: pointer;
+		text-align: center;
+		text-decoration: none;
+		line-height: 40px;
+	}
+	
+	.source, .destination {
+		height: 200px;
+	}
+	
+	.carousel .slide div img {
+		height: 200px;
+	}
+	
+	.carousel .slide .legend {
+		background: transparent;
+		display: flex;
+    justify-content: space-around;
+	}
+
+	.carousel .slide .legend .inputDiv {
+		display: flex;
+		align-items: center;
+	}
+
+	.carousel .slide .legend input {
+		background-color: transparent;
+    color: #fff;
+    outline: none;
+    outline-style: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: solid #fff 1px;
+    font-size: 24px;
+    width: 160px;
+	}
+}
