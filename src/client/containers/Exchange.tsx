@@ -112,11 +112,20 @@ class Exchange extends React.Component<Props, State> {
 		}
 	}
 
-	onCarouselChange = (index) => {
+	onSourceCarouselChange = (index) => {
 		this.setState({
 			sourceAmount: '',
 			sourceCurrencyCode: this.props.balance[index].currencyCode,
 			sourceSelectedItem: index,
+			destinationAmount: ''
+		});
+	}
+
+	onDestinationCarouselChange = (index) => {
+		this.setState({
+			sourceAmount: '',
+			destinationCurrencyCode: this.props.balance[index].currencyCode,
+			destinationSelectedItem: index,
 			destinationAmount: ''
 		});
 	}
@@ -139,7 +148,7 @@ class Exchange extends React.Component<Props, State> {
 					<Carousel
 						showStatus={false}
 						showThumbs={false}
-						onChange={this.onCarouselChange}
+						onChange={this.onSourceCarouselChange}
 						selectedItem={this.state.sourceSelectedItem}
 					>
 						{
@@ -174,7 +183,7 @@ class Exchange extends React.Component<Props, State> {
 					<Carousel
 						showStatus={false}
 						showThumbs={false}
-						onChange={this.onCarouselChange}
+						onChange={this.onDestinationCarouselChange}
 						selectedItem={this.state.destinationSelectedItem}
 					>
 						{
