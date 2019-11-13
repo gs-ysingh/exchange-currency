@@ -48,17 +48,35 @@ class Exchange extends React.Component<Props, State> {
 		return reverseSign + Math.round(Math.abs(value) * (rates[target] / rates[source]) * 100) / 100;
 	}
 
+	getBalance = (data) => {
+		const index = this.props.balance.findIndex((item) => {
+			return item.currencyCode === data.currencyCode;
+		});
+
+		if (index !== -1) {
+			return Math.round((this.props.balance[index].amount + (+data.amount)) * 100) / 100;
+		}
+	}
+
 	exchangeCurrency = () => {
 		if(this.state.sourceSelectedItem !== this.state.destinationSelectedItem) {
-			this.props.exchangeCurrency({
+			const source = {
 				currencyCode: this.state.sourceCurrencyCode,
 				amount: this.state.sourceAmount,
-			});
-
-			this.props.exchangeCurrency({
+			};
+			const destination = {
 				currencyCode: this.state.destinationCurrencyCode,
 				amount: this.state.destinationAmount,
-			});
+			};
+			if (this.getBalance(source) < 0 || this.getBalance(destination) < 0) {
+				alert('You do not have enough balance');
+				return;
+			}
+			this.props.exchangeCurrency(source);
+			this.props.exchangeCurrency(destination);
+		}
+		else {
+			alert('You cannot exchange same currency');
 		}
 	}
 
