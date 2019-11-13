@@ -1,13 +1,14 @@
 {
   "compilerOptions": {
     "sourceMap": true,
-    "noImplicitAny": false,
+		"noImplicitAny": false,
+		"esModuleInterop": true,
     "module": "commonjs",
     "target": "es6",
     "lib": [
       "es2015",
       "es2017",
-      "dom"
+      "dom" 
     ],
     "removeComments": true,
     "allowSyntheticDefaultImports": false,
@@ -17,7 +18,7 @@
     "paths": {
       "components/*": [
         "src/client/components/*"
-      ],
+      ]
     }
   }
 }

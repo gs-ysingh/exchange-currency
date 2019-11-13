@@ -5,11 +5,13 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "test": "cypress open"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@bahmutov/add-typescript-to-cypress": "^2.1.2",
     "@types/react": "^16.9.11",
     "@types/react-dom": "^16.9.4",
     "@types/react-redux": "^7.1.5",
@@ -17,6 +19,7 @@
     "@types/redux": "^3.6.0",
     "awesome-typescript-loader": "^5.2.1",
     "css-loader": "^3.2.0",
+    "cypress": "^3.6.1",
     "file-loader": "^4.2.0",
     "html-webpack-plugin": "^3.2.0",
     "node-sass": "^4.13.0",
